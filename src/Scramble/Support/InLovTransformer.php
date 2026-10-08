@@ -104,7 +104,7 @@ class InLovTransformer
     {
         $lovRegistry = app(LovRegistry::class);
 
-        $description = trim(Str::replace("\n", ' ', $lovRegistry->getLovLabel($this->lovCode))); // @phpstan-ignore binaryOp.invalid, binaryOp.invalid
+        $description = trim(Str::replace("\n", ' ', $lovRegistry->getLovLabel($this->lovCode)));
 
         if (! $description) {
             return;

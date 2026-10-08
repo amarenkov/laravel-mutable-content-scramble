@@ -1,0 +1,13 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Cannot access property \$lovCode on object\|string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/Scramble/RuleTransformers/LovItemCodeRule.php
+
+		-
+			message: '#^Cannot access property \$objectClass on object\|string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/Scramble/RuleTransformers/ObjectCodeRule.php

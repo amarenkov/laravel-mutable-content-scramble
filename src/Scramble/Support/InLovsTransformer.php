@@ -101,7 +101,7 @@ class InLovsTransformer
 
     private function addEnumDescription(OpenApi\Type $schemaType): void
     {
-        $description = trim(Str::replace("\n", ' ', __('mutable-content-scramble::schema.lovs'))); // @phpstan-ignore binaryOp.invalid, binaryOp.invalid
+        $description = trim(Str::replace("\n", ' ', __('mutable-content-scramble::schema.lovs')));
 
         if (! $description) {
             return;
