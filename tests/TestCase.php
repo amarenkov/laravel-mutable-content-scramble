@@ -14,6 +14,7 @@ use Dedoc\Scramble\ScrambleServiceProvider;
 
 use Amarenkov\MutableContent\Database\Seeders\FieldsSeeder;
 use Amarenkov\MutableContent\Database\Seeders\LovsSeeder;
+use Amarenkov\MutableContent\Helpers\DatabaseHelper;
 use Amarenkov\MutableContent\Models\ModelWithFields;
 use Amarenkov\MutableContent\MutableContentServiceProvider;
 
@@ -41,7 +42,7 @@ abstract class TestCase extends BaseTestCase
     protected function defineEnvironment($app): void
     {
         $app['config']->set('app.locale', 'en');
-        $app['config']->set('database.default', 'pgsql');
+        $app['config']->set('database.default', env('DB_CONNECTION', 'pgsql'));
     }
 
     protected function defineRoutes($router): void
@@ -69,11 +70,17 @@ abstract class TestCase extends BaseTestCase
 
     protected function prepareDatabase(): void
     {
-        foreach (['public', 'logs'] as $schema) {
-            DB::statement("DROP SCHEMA IF EXISTS {$schema} CASCADE");
-        }
+        if (DatabaseHelper::isMariaDb()) {
+            foreach (DB::connection()->getSchemaBuilder()->getTableListing(schemaQualified: false) as $table) {
+                DB::statement('DROP TABLE IF EXISTS `'.$table.'`');
+            }
+        } else {
+            foreach (['public', 'logs'] as $schema) {
+                DB::statement("DROP SCHEMA IF EXISTS {$schema} CASCADE");
+            }
 
-        DB::statement('CREATE SCHEMA public');
+            DB::statement('CREATE SCHEMA public');
+        }
 
         Artisan::call('migrate', [
             '--path' => [
