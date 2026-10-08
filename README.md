@@ -1,5 +1,8 @@
 # amarenkov/laravel-mutable-content-scramble
 
+[![tests](https://github.com/amarenkov/laravel-mutable-content-scramble/actions/workflows/tests.yml/badge.svg)](https://github.com/amarenkov/laravel-mutable-content-scramble/actions/workflows/tests.yml)
+[![Packagist](https://img.shields.io/packagist/v/amarenkov/laravel-mutable-content-scramble)](https://packagist.org/packages/amarenkov/laravel-mutable-content-scramble)
+
 OpenAPI docs for
 [`amarenkov/laravel-mutable-content`](https://github.com/amarenkov/laravel-mutable-content)
 via [Scramble](https://scramble.dedoc.co/).
