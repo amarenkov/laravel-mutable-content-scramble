@@ -2,7 +2,6 @@
 
 namespace Amarenkov\MutableContentScramble\Tests\Fixtures\Models;
 
-use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Table;
 
 use Amarenkov\MutableContent\Models\ModelWithFields;
@@ -23,7 +22,6 @@ use Amarenkov\MutableContent\Attributes\FieldAttr\Common\TypeSettings as CFAType
 use Amarenkov\MutableContentScramble\Tests\Fixtures\Lovs\RecordStatus;
 
 #[Table('records')]
-#[Fillable(['id', 'fields'])]
 #[ClassLabel('Record')]
 #[FieldCode]
 class Record extends ModelWithFields
