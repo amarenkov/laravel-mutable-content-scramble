@@ -63,14 +63,14 @@ The parameter extractor, rule transformers and schema extensions are registered 
 use Amarenkov\MutableContent\Helpers\RuleHelper;
 use Amarenkov\MutableContentScramble\Attributes\MutableRequest;
 
-#[MutableRequest(Order::class)]
-#[MutableRequest(OrderItem::class, 'items.*')]
+#[MutableRequest(Project::class)]
+#[MutableRequest(Task::class, 'tasks.*')]
 public function store(Request $request)
 {
     $data = $request->validate(
-        RuleHelper::getValidationRules(Order::class) +
-        ['items' => 'array|required'] +
-        RuleHelper::getValidationRules(OrderItem::class, 'items.*')
+        RuleHelper::getValidationRules(Project::class) +
+        ['tasks' => 'array|required'] +
+        RuleHelper::getValidationRules(Task::class, 'tasks.*')
     );
 
     // ...
