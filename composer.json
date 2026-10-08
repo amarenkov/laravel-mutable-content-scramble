@@ -1,0 +1,46 @@
+{
+    "name": "amarenkov/laravel-mutable-content-scramble",
+    "description": "Scramble API documentation extension for amarenkov/laravel-mutable-content",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "scramble",
+        "openapi",
+        "api-documentation",
+        "dynamic-fields",
+        "custom-fields"
+    ],
+    "homepage": "https://github.com/amarenkov/laravel-mutable-content-scramble",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexey Marenkov",
+            "email": "alex@marenkov.dev",
+            "homepage": "https://github.com/amarenkov"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/amarenkov/laravel-mutable-content-scramble/issues",
+        "source": "https://github.com/amarenkov/laravel-mutable-content-scramble"
+    },
+    "require": {
+        "php": "^8.4",
+        "amarenkov/laravel-mutable-content": "^0.1",
+        "dedoc/scramble": "^0.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "Amarenkov\\MutableContentScramble\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Amarenkov\\MutableContentScramble\\MutableContentScrambleServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
