@@ -7,6 +7,10 @@ and this package adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- A reference by code to a class without objects is documented as a plain string with the class description instead of an empty code table.
+
 ## [0.1.0] - 2026-10-08
 
 Initial release.

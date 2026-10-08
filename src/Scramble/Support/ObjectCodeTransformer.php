@@ -31,7 +31,7 @@ class ObjectCodeTransformer
 
         $options = ObjectHelper::getCodeOptions($this->objectClass, self::CODES_LIMIT);
 
-        if ($options === null) {
+        if (!$options) {
             $schemaType->setDescription(__('mutable-content-scramble::schema.object_code', ['class' => $classLabel]));
 
             return $schemaType;
