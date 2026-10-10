@@ -1,6 +1,6 @@
 {
     "name": "amarenkov/laravel-mutable-content-scramble",
-    "description": "Scramble API documentation extension for amarenkov/laravel-mutable-content",
+    "description": "Scramble OpenAPI extension for laravel-mutable-content: field labels in request docs, lists of values as enums, self-hosted Stoplight Elements.",
     "type": "library",
     "keywords": [
         "laravel",
@@ -8,7 +8,8 @@
         "openapi",
         "api-documentation",
         "dynamic-fields",
-        "custom-fields"
+        "custom-fields",
+        "stoplight-elements"
     ],
     "homepage": "https://github.com/amarenkov/laravel-mutable-content-scramble",
     "license": "MIT",
