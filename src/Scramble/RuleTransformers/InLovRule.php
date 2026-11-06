@@ -15,14 +15,6 @@ use Amarenkov\MutableContent\Rules\InLov;
 class InLovRule implements RuleTransformer
 {
     // private
-    private function getProtectedValue(object $obj, string $name): mixed
-    {
-        $array = (array) $obj;
-        $prefix = chr(0).'*'.chr(0);
-
-        return $array[$prefix.$name];
-    }
-
     private function preservePreviousRules(Type $current, Type $previous): Type
     {
         if ($previous->nullable) {
@@ -44,9 +36,13 @@ class InLovRule implements RuleTransformer
 
     public function toSchema(Type $previous, NormalizedRule $rule, RuleTransformerContext $context): Type
     {
-        $rule = $rule->getRule();
+        $inLov = $rule->getRule();
 
-        $lovCode = $this->getProtectedValue($rule, 'lovCode');
+        if (!$inLov instanceof InLov) {
+            return $previous;
+        }
+
+        $lovCode = $inLov->lovCode;
 
         $lovType = $this->openApiTransformer->transform(new ObjectType('mutable_lov:'.$lovCode));
 

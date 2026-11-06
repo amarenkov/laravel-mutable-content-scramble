@@ -45,6 +45,4 @@ class Record extends ModelWithFields
     #[CFAType(Type::TYPE_OBJECT), CFALabel('Any owner code'), CFAObjectClass(Owner::class), CFATypeSettings([TypeSettings::LINK_BY_CODE => true, TypeSettings::ALLOW_UNLISTED_CODES => true])]
     public const FIELD_ANY_OWNER_CODE = 'any_owner_code';
 
-    // static
-    protected static array|bool|null $fieldDefinitions = null;
 }

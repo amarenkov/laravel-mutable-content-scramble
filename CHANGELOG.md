@@ -7,6 +7,10 @@ and this package adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+
+- `except()` and `only()` of `InLovTransformer` and `InLovsTransformer`: nothing used them.
+
 ## [0.8.0] - 2026-11-04
 
 ### Changed
